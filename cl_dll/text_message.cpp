@@ -76,13 +76,13 @@ char *CHudTextMessage::LocaliseTextString( const char *msg, char *dst_buffer, in
 			{
 				*dst = *wsrc;
 			}
-			if ( buffer_size >= 1 ) *dst = 0; // The buffer_size has already been decreased at this point, so 1 character left is sufficient. No else case is needed because for this case (end of buffer) null termination is ensured at the end of this function.
+			if ( buffer_size >= 1 ) *dst = 0; // The buffer_size has already been decreased by the amount of data written, so 1 character left is sufficient. No else case is needed because for this case (end of buffer) zero termination is ensured at the end of this function.
 		}
 		else
 		{
 			*dst = *src;
 			dst++, src++;
-			if ( buffer_size >= 2 ) *dst = 0; // This is the 2nd byte written. No else case is needed because for this case (end of buffer) null termination is ensured at the end of this function.
+			if ( buffer_size >= 2 ) *dst = 0; // This is the 2nd byte written. No else case is needed because for this case (end of buffer) zero termination is ensured at the end of this function.
 		}
 	}
 
